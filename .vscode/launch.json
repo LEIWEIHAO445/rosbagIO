@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "rosbagIO",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/devel/lib/rosbagio/rosbagio", //要调试的可执行文件
+            "args": [
+                "/home/leiwh/Research/Data/KAIST/urban38/rosbag/urban38.bag",
+                "/home/leiwh/Research/Data/KAIST/urban38/rosbag/urban38_run.bag"
+            ],
+            "stopAtEntry": false, //设为true则调试运行时会先停在程序开始
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "catkin_make: build", //要与tasks.json中label的值保持一致
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
